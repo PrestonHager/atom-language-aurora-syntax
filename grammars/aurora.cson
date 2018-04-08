@@ -1,0 +1,51 @@
+# If this is your first time writing a language grammar, check out:
+#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+
+'scopeName': 'source.aurora'
+'name': 'Aurora'
+'fileTypes': [
+  'aurora'
+]
+'limitLineLength': false
+'patterns': [
+  {
+    'comment': 'The comment structure. Any line that begins with a "//" and/or whitespace is considered a comment.'
+    'match': '^\\s*//.*$'
+    'name': 'comment.aurora'
+  },
+  {
+    'match': '(String)( .*)( ?= ?)(".*");'
+    'name': 'meta.definition.aurora'
+    'captures':
+      1:
+        'name': 'keyword.type.aurora'
+      2:
+        'name': 'name.varaible.aurora'
+      3:
+        'name': 'pucuation.definition.aurora'
+      4:
+        'name': 'constant.string.aurora'
+  },
+  {
+    'match': '(Number)( .*)( ?= ?)(([0-9]+\.?[0-9]* ?[-+\*\/]? ?)+);'
+    'name': 'meta.definition.aurora'
+    'captures':
+      1:
+        'name': 'keyword.type.aurora'
+      2:
+        'name': 'name.varaible.aurora'
+      3:
+        'name': 'puncuation.definition.aurora'
+      4:
+        'name': 'constant.number.aurora'
+  },
+  {
+    'match': '(\w*)\((.+,? ?)*\)'
+    'name': 'meta.call.aurora'
+    'captures':
+      1:
+        'name': 'entity.name.function.aurora'
+      2:
+        'name': 'variable.parameter.function.aurora'
+  }
+]
