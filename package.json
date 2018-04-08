@@ -4,7 +4,9 @@
   "description": "Language syntax for Aurora in Atom Editor.",
   "keywords": [
     "language",
-    "grammar"
+    "grammar",
+    "aurora",
+    "startaste"
   ],
   "repository": "https://github.com/atom/language-aurora",
   "license": "MIT",
