@@ -14,38 +14,67 @@
     'name': 'comment.aurora'
   },
   {
-    'match': '(String)( .*)( ?= ?)(".*");'
-    'name': 'meta.definition.aurora'
-    'captures':
-      1:
-        'name': 'keyword.type.aurora'
-      2:
-        'name': 'name.varaible.aurora'
-      3:
-        'name': 'pucuation.definition.aurora'
-      4:
-        'name': 'constant.string.aurora'
+    'match': '".*?"'
+    'name': 'meta.string.aurora'
   },
   {
-    'match': '(Number)( .*)( ?= ?)(([0-9]+\.?[0-9]* ?[-+\*\/]? ?)+);'
-    'name': 'meta.definition.aurora'
+    'match': '([0-9]+)(\\.[0-9]+)?'
+    'name': 'meta.number.aurora'
     'captures':
-      1:
-        'name': 'keyword.type.aurora'
-      2:
-        'name': 'name.varaible.aurora'
-      3:
-        'name': 'puncuation.definition.aurora'
-      4:
+      0:
         'name': 'constant.number.aurora'
+  }
+  {
+    'comment': 'All the keywords in Aurora, including String, Number, func, and end.'
+    'match': '(String|Number|func|end|Void)'
+    'name': 'meta.keyword.aurora'
   },
   {
-    'match': '(\w*)\((.+,? ?)*\)'
-    'name': 'meta.call.aurora'
+    'comment': 'The special puncuation and symbols in Aurora.'
+    'match': '(=>)'
+    'name': 'meta.special.puncuation.aurora'
     'captures':
+      1:
+        'name': 'entity.name.type.aurora'
+  },
+  {
+    'begin': '(\\w+)(\\()'
+    'beginCaptures':
+      0:
+        'name': 'meta.function.aurora'
       1:
         'name': 'entity.name.function.aurora'
       2:
-        'name': 'variable.parameter.function.aurora'
+        'name': 'puncuation.function.aurora'
+    'end': '(\\))'
+    'endCaptures':
+      0:
+        'name': 'meta.function.aurora'
+      1:
+        'name': 'puncuation.function.aurora'
+    'patterns': [
+      {
+        'match': '".*?"'
+        'name': 'constant.string.aurora'
+      },
+      {
+        'match': '(\\w+)(::)(String|Number)'
+        'name': 'meta.parameter.aurora'
+        'captures':
+          1:
+            'name': 'entity.other.attribute-name.aurora'
+          2:
+            'name': 'puncuation.function.parameters.aurora'
+          3:
+            'name': 'keyword.function.parameters.aurora'
+      },
+      {
+        'match': '(\\w+)'
+        'name': 'meta.function.parameters.aurora'
+        'captures':
+          1:
+            'name': 'entity.other.attribute-name.aurora'
+      }
+    ]
   }
 ]
