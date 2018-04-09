@@ -23,10 +23,17 @@
     'captures':
       0:
         'name': 'constant.number.aurora'
-  }
+  },
+  {
+    'match': '(TRUE|FALSE)'
+    'name': 'meta.boolean.aurora'
+    'captures':
+      0:
+        'name': 'constant.boolean.aurora'
+  },
   {
     'comment': 'All the keywords in Aurora, including String, Number, func, and end.'
-    'match': '(String|Number|func|end|Void)'
+    'match': '(String|Number|Void|Bool|func|if|then|end|return)'
     'name': 'meta.keyword.aurora'
   },
   {
@@ -76,5 +83,21 @@
             'name': 'entity.other.attribute-name.aurora'
       }
     ]
+  },
+  {
+    'match': '(if ?)(\{)(.*(<=|>=|<|>|==).*)(\})'
+    'captures':
+      0:
+        'name': 'meta.comparison.aurora'
+      1:
+        'name': 'meta.if.aurora'
+      2:
+        'name': 'puncuation.comparison.aurora'
+      3:
+        'name': 'entity.other.attribute-name.aurora'
+      4:
+        'name': 'keyword.operator.comparison.aurora'
+      5:
+        'name': 'puncuation.comparison.aurora'
   }
 ]
