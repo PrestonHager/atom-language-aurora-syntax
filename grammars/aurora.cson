@@ -45,7 +45,7 @@
         'name': 'entity.name.type.aurora'
   },
   {
-    'begin': '(\\w+)(\\()'
+    'begin': '(\\w+)(>)'
     'beginCaptures':
       0:
         'name': 'meta.function.aurora'
@@ -53,7 +53,7 @@
         'name': 'entity.name.function.aurora'
       2:
         'name': 'puncuation.function.aurora'
-    'end': '(\\))'
+    'end': '(;)'
     'endCaptures':
       0:
         'name': 'meta.function.aurora'
