@@ -6,7 +6,7 @@ describe "Aurora grammar", ->
 
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage("language-aurora")
+      atom.packages.activatePackage("language-aurora-syntax")
 
     runs ->
       grammar = atom.syntax.grammarForScopeName("source.aurora")
