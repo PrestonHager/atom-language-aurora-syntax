@@ -6,6 +6,7 @@
 'fileTypes': [
   'aurora'
 ]
+'firstLineRegex': '//.*aurora.*'
 'limitLineLength': false
 'patterns': [
   {
@@ -14,10 +15,12 @@
     'name': 'comment.aurora'
   },
   {
+    'comment': 'The string literal.'
     'match': '".*?"'
     'name': 'meta.string.aurora'
   },
   {
+    'comment': 'Any hex number, prefixed with 0xXX.'
     'match': '0x[0-9a-fA-F]+'
     'name': 'meta.hex_number.aurora'
     'captures':
@@ -25,6 +28,7 @@
         'name': 'constant.number.aurora'
   },
   {
+    'comment': 'Any other decimal number, either Integer or Float.'
     'match': '([0-9]+)(\\.[0-9]+)?'
     'name': 'meta.number.aurora'
     'captures':
@@ -32,6 +36,7 @@
         'name': 'constant.number.aurora'
   },
   {
+    'comment': 'The Boolean constants.'
     'match': '(TRUE|FALSE)'
     'name': 'meta.boolean.aurora'
     'captures':
@@ -52,6 +57,7 @@
         'name': 'entity.name.type.aurora'
   },
   {
+    'comment': 'The for loop function, which is a little diffrent from other functions.'
     'begin': '(for)(>)(Number|String|Bool)(: ?)'
     'beginCaptures':
       0:
@@ -97,6 +103,7 @@
     ]
   },
   {
+    'comment': 'The function declaration.'
     'begin': '(func )(\\w+)(>)'
     'beginCaptures':
       0:
@@ -107,7 +114,7 @@
         'name': 'entity.name.function.aurora'
       3:
         'name': 'puncuation.function.aurora'
-    'end': '(;)'
+    'end': '(<|;)'
     'endCaptures':
       0:
         'name': 'meta.definition.function.aurora'
@@ -153,6 +160,7 @@
     ]
   }
   {
+    'comment': 'The function call.'
     'begin': '(\\w+)(>)'
     'beginCaptures':
       0:
@@ -161,7 +169,7 @@
         'name': 'entity.name.function.aurora'
       2:
         'name': 'puncuation.function.aurora'
-    'end': '(;)'
+    'end': '(<|;)'
     'endCaptures':
       0:
         'name': 'meta.function.aurora'
@@ -196,6 +204,7 @@
     ]
   },
   {
+    'comment': 'The if function, which, like the for function, is a little diffrent from other functions.'
     'match': '(if ?)(.*(<=|>=|<|>|==).*)'
     'captures':
       0:
