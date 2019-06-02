@@ -8,7 +8,7 @@
     "aurora",
     "startaste"
   ],
-  "repository": "https://github.com/atom/language-aurora",
+  "repository": "https://github.com/PrestonHager/atom-language-aurora-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
