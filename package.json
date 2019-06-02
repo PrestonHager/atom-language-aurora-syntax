@@ -1,6 +1,6 @@
 {
   "name": "language-aurora-syntax",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Language syntax for Aurora in Atom Editor.",
   "keywords": [
     "language",
